@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images.jpeg">
+    <title>Quiz Maker | Make Free Online Quizzes In Mintues</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <div id="app">
+            <div id="home-page" class="page">
+                <div class="in-dive">
+                    <h1>Welcome to the Online Quiz Maker!</h1>
+                    <h5>Create an awesome quiz in mintues</h5>
+                </div>
+                
+                <div class="out-dive">
+                    <button onclick="loadCreateQuizPage()" class="but-mar">Create a Quiz</button>
+                    <button onclick="loadTakeQuizPage()" class="but-mar">Take a Quiz</button>
+                </div>
+                
+                
+            </div>
+            <div id="create-quiz-page" class="page">
+                <!-- Form to create a quiz -->
+                <h1>Create a Quiz</h1>
+                <form onsubmit="createQuiz(event)">
+                    <div class="cr-div">
+                    <label for="quiz-title"><h3>Quiz Title:</h3></label>
+                    <input type="text" id="quiz-title" placeholder="Enter your Quiz Title" required>
+                    </div>
+                    <div id="questions-container">
+                        <div class="question">
+                            <label for="question">Question:</label>
+                            <input type="text" name="question" placeholder="Enter your Question Here" required>
+                            <label for="option1">Option 1:</label>
+                            <input type="text" name="option1" placeholder="Enter your First Option" required>
+                            <label for="option2">Option 2:</label>
+                            <input type="text" name="option2"  placeholder="Enter your Second Option" required>
+                            <label for="option3">Option 3:</label>
+                            <input type="text" name="option3"  placeholder="Enter your Third Option" required>
+                            <label for="correct-answer">Correct Answer:</label>
+                            <input type="text" name="correct-answer"  placeholder="Enter your Correct Answer" required>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addQuestion()" class="add-div">Add Question</button>
+                    <button type="submit" class="add-div">Create Quiz</button>
+                </form>
+            </div>
+            <div id="take-quiz-page" class="page">
+                <!-- Quiz-taking interface -->
+                <h2>Quiz Title</h2>
+                <div id="quiz-container">
+                    <!-- Quiz questions will be displayed here dynamically -->
+                </div>
+                <button onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="results-page" class="page">
+                <!-- Quiz results will be displayed here dynamically -->
+                <h2>Quiz Results</h2>
+                <p>Score: <span id="score"></span></p>
+                <div id="correct-answers"></div>
+            </div>
+        </div>
+       
+       
+       <script src="script.js"></script>
+    </div>
+    
+</body>
+</html>
